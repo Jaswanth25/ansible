@@ -25,8 +25,13 @@
         name: yum-utils
         state: present
 
-    - name: Add Docker repository
-      command: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    # - name: Install Docker
+    #   ansible.builtin.shell: cd ~ && curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh
+    
+    - name: Add YUM repository for docker
+      ansible.builtin.copy:
+        src: docker-ce.repo
+        dest: /etc/yum.repos.d/docker-ce.repo
 
     - name: Install Docker
       yum: 
