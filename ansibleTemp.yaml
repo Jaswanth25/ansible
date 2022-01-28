@@ -1,6 +1,6 @@
 ---
 - name: Deploy Terraform
-  hosts: localhost
+  hosts: 17.0.0.1
   gather_facts: False
   become: true
   
