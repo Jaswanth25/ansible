@@ -1,6 +1,6 @@
 ---
 - name: Deploy Terraform
-  hosts: ansible_host
+  hosts: localhost
   gather_facts: False
   connection: local
   become: true
