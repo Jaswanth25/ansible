@@ -9,4 +9,4 @@
     - name: git clone
       git: 
         repo: 'https://github.com/Jaswanth25/myWorks.git'
-        dest: /git/myWorks
+        version: one
