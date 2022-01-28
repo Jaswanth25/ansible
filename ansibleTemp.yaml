@@ -1,6 +1,6 @@
 ---
 - name: Deploy Terraform
-  hosts: tag_srv_ansible
+  hosts: localhost
   gather_facts: False
   become: true
   
