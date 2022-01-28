@@ -1,6 +1,6 @@
 ---
 - name: Deploy Terraform
-  hosts: webservers
+  hosts: all
   gather_facts: False
   become: true
   
