@@ -6,7 +6,7 @@
 
   tasks: 
     - name: Yum Install Packages
-      yum: name=['wget'] state=latest
+      yum: name='wget' state=latest
 
     - name: terraform install
       unarchive:
