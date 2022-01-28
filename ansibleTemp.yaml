@@ -9,5 +9,5 @@
     #     update_cache: yes
     - name: git clone
       git: 
-        repo: 'https://github.com/Jaswanth25/ansible.git'
-        dest: /git/ansible
+        repo: 'https://github.com/Jaswanth25/myWorks.git'
+        dest: /git/myWorks
