@@ -1,10 +1,15 @@
---- 
-- 
+---
+- name: git clone test
   hosts: localhost
-  name: "git clone test"
-  tasks: 
-    - 
+
+  tasks:
+    # - name: Install git
+    #   apt:
+    #     name: git
+    #     state: present
+    #     update_cache: yes
+    - name: git clone
       git: 
-        repo: "https://github.com/Jaswanth25/myWorks.git"
+        repo: 'https://github.com/Jaswanth25/myWorks.git'
         version: one
-      name: "git clone"
+...
