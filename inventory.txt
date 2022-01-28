@@ -1,3 +1,2 @@
-localhost ansible_connection=localhost
 2.184.72.150.74
 10.0.1.143
