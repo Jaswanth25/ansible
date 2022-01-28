@@ -1,6 +1,7 @@
+---
 - name: git clone test
   hosts: localhost
-  
+
   tasks:
     # - name: Install git
     #   apt:
@@ -11,3 +12,5 @@
       git: 
         repo: 'https://github.com/Jaswanth25/myWorks.git'
         version: one
+
+---
