@@ -1,0 +1,13 @@
+- name: git clone test
+  hosts: localhost
+
+  tasks:
+    # - name: Install git
+    #   apt:
+    #     name: git
+    #     state: present
+    #     update_cache: yes
+    - name: git clone
+      git: 
+        repo: 'https://github.com/Jaswanth25/ansible.git'
+        dest: /git/ansible
