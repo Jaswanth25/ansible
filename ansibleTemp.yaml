@@ -31,5 +31,20 @@
     - name: docker installation
       command: amazon-linux-extras install docker -y
 
-   
+    - name: Add YUM repository for Kubernetes
+      ansible.builtin.copy:
+        src: kubernetes.repo
+        dest: /etc/yum.repos.d/kubernetes.repo
+
+    - name: Install Kubernetes
+      yum: 
+        name: "{{ packages }}"
+        state: present
+        update_cache: yes
+      vars:
+        packages:
+          - kubelet 
+          - kubeadm 
+          - kubectl
+    
 ...
