@@ -1,15 +1,7 @@
 ---
-- name: git clone test
-  hosts: localhost
-
-  tasks:
-    # - name: Install git
-    #   apt:
-    #     name: git
-    #     state: present
-    #     update_cache: yes
-    - name: git clone
-      git: 
-        repo: 'https://github.com/Jaswanth25/myWorks.git'
-        version: one
-...
+- name: Deploy Terraform
+  hosts: tag_srv_ansible
+  gather_facts: False
+  become: true
+  roles:
+    - { role: terraform }
