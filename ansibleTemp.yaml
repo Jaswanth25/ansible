@@ -2,8 +2,9 @@
 - name: Deploy Terraform
   hosts: all
   gather_facts: False
+  connection: local
   become: true
-  
+
   tasks: 
     - name: Yum Install Packages
       yum: name=['wget'] state=latest
