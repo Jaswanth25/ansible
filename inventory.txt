@@ -1,1 +1,1 @@
-44.195.20.215 ansible_user=ec2-user ansible_ssh_private_key_file=temp1.pem ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+54.83.249.174 ansible_user=ec2-user ansible_ssh_private_key_file=temp1.pem ansible_ssh_common_args='-o StrictHostKeyChecking=no'
