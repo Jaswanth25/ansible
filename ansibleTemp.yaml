@@ -47,6 +47,30 @@
         dest: /bin/kubectl
         mode: 0755
     
+    # - name: set path
+    #   shell:
+    #     cmd: export PATH=$PATH:$HOME/bin
+
+    - name: Helm download
+      get_url:
+        url: https://get.helm.sh/helm-v3.4.1-linux-amd64.tar.gz
+        dest: /etc
+        
+
+    - name: Helm extraction
+      shell:
+        cmd: tar xvf helm-v3.4.1-linux-amd64.tar.gz
+
+    - name: copying
+      ansible.builtin.copy:
+        src: /etc/linux-amd64/helm
+        dest: /bin/helm
+        mode: 0755
+
+    - name: clearing unnecessary
+      shell:
+        cmd: rm helm-v3.4.1-linux-amd64.tar.gz && rm -rf linux-amd64
+
     - name: set path
       shell:
         cmd: export PATH=$PATH:$HOME/bin
