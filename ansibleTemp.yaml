@@ -37,9 +37,9 @@
         dest: /etc
         
 
-    - name: Run rustup installer
+    - name: Run kubectl installer
       shell:
-        cmd: chmod +x etc/kubectl
+        cmd: chmod +x /etc/kubectl
 
 
     # - name: Add Kubernetes Repository
