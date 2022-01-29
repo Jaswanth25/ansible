@@ -45,7 +45,7 @@
       ansible.builtin.copy:
         src: /etc/kubectl
         dest: /bin/kubectl
-        mode: 0644
+        mode: 0755
     
     - name: set path
       shell:
