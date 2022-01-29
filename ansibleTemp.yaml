@@ -34,13 +34,12 @@
     - name: Install kubectl
       get_url:
         url: https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/kubectl
-        return_content: yes
-      register: kubectl_installer
+        # dest: /etc
+        
 
     - name: Run rustup installer
       shell:
-        cmd: chmod +x
-        stdin: "{{ kubectl_installer.content }}"
+        cmd: chmod +x ./kubectl
 
 
     # - name: Add Kubernetes Repository
