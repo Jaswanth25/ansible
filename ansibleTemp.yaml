@@ -66,11 +66,20 @@
     #   shell:
     #     cmd: tar xvf helm-v3.4.1-linux-amd64.tar.gz
 
-    - name: copying
+    - name: copying helm
       ansible.builtin.copy:
         src: /etc/linux-amd64/helm
         dest: /bin/helm
         mode: 0755
+
+    - name: aws-cli download
+      unarchive:
+        src: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+        dest: /etc
+        remote_src: True
+    - name: aws-cli installation
+      shell:
+        cmd: sudo /etc/awscli-exe-linux-x86_64/aws/install
 
     # - name: clearing unnecessary
     #   shell:
