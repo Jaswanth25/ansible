@@ -78,7 +78,7 @@
         dest: /etc
         remote_src: True
     - name: aws-cli installation
-      command: sudo /etc/awscli-exe-linux-x86_64/aws/install
+      command: sudo /etc/aws/install
       become: true
       become_method: sudo
 
