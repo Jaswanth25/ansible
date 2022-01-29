@@ -78,8 +78,9 @@
         dest: /etc
         remote_src: True
     - name: aws-cli installation
-      shell:
-        cmd: sudo /etc/awscli-exe-linux-x86_64/aws/install
+      command: sudo /etc/awscli-exe-linux-x86_64/aws/install
+      become: true
+      become_method: sudo
 
     # - name: clearing unnecessary
     #   shell:
