@@ -41,6 +41,14 @@
       shell:
         cmd: chmod +x /etc/kubectl
 
+    - synchronize:
+      src: /etc/kubectl
+      dest: /bin/kubectl
+    
+    - name: set path
+      shell:
+        cmd: export PATH=$PATH:$HOME/bin
+
 
     # - name: Add Kubernetes Repository
     #   apt_repository:
