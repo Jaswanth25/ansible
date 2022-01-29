@@ -41,9 +41,10 @@
       shell:
         cmd: chmod +x /etc/kubectl
 
-    - synchronize:
-      src: /etc/kubectl
-      dest: /bin/kubectl
+    - name: copying
+      ansible.builtin.copy:
+        src: /etc/kubectl
+        dest: /bin/kubectl
     
     - name: set path
       shell:
