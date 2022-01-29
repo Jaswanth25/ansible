@@ -30,19 +30,32 @@
     
     - name: docker installation
       command: amazon-linux-extras install docker -y
-    - name: Add Kubernetes Repository
-      apt_repository:
-        repo: deb http://apt.kubernetes.io/ kubernetes-xenial main 
-        state: present
-        filename: kubernetes
-        mode: 0600
-    - name: Installing Kubernetes Cluster Packages.
-      apt: 
-        name:
-          - kubeadm
-          - kubectl
-          - kubelet
-        state: present
+
+    - name: Install kubectl
+      uri:
+        url: https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/kubectl
+        return_content: yes
+      register: kubectl_installer
+
+    - name: Run rustup installer
+      shell:
+        cmd: chmod +x
+        stdin: "{{ kubectl_installer.content }}"
+
+
+    # - name: Add Kubernetes Repository
+    #   apt_repository:
+    #     repo: deb http://apt.kubernetes.io/ kubernetes-xenial main 
+    #     state: present
+    #     filename: kubernetes
+    #     mode: 0600
+    # - name: Installing Kubernetes Cluster Packages.
+    #   apt: 
+    #     name:
+    #       - kubeadm
+    #       - kubectl
+    #       - kubelet
+    #     state: present
     # - name: Add YUM repository for Kubernetes
     #   ansible.builtin.copy:
     #     src: kubernetes.repo
